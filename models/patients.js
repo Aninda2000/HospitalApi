@@ -1,4 +1,5 @@
 const mongoose =require('mongoose');
+
 const patientSchema=new mongoose.Schema({
     phoneNo:{
         type:String,
@@ -8,5 +9,5 @@ const patientSchema=new mongoose.Schema({
     timestamps:true
 });
 
-const Patient =mongoose.model('patients',doctorSchema);
+const Patient =mongoose.model('patients',patientSchema);
 module.exports=Patient;
