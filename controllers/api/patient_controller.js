@@ -7,10 +7,12 @@ module.exports.create= function(req,res){
             return res.status(500).json({"msg":"error in finding patient"});
         }
         if(!docs){
-            patient.create(req.body);
-            return res.status(200).json({"msg":"patient created  successfully"});
+            patient.create(req.body,function(err,docs){
+                return res.status(200).json({"msg":"patient created  successfully","patient_Id":docs._id});
+            });
+            
         }else{
-            return res.status(200).json({"msg":"patient already exist"});
+            return res.status(200).json({"msg":"patient already exist","patient_Id":docs._id});
         }
     })
 }
