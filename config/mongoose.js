@@ -1,7 +1,7 @@
 const mongoose= require('mongoose');
 const db= mongoose.connection;
 
-mongoose.connect('mongodb://localhost:27017/HospitalDB');
+mongoose.connect('mongodb+srv://aninda:aninda123@cluster0.axsk7.mongodb.net/?retryWrites=true&w=majority');
 
 db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
 
