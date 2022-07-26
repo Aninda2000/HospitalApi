@@ -1,6 +1,7 @@
 const Doctor=require('../../models/doctors');
 const jwt = require('jsonwebtoken');
 
+//register route fuction
 module.exports.create= function(req,res){
     Doctor.findOne({username:req.body.username},function(err,docs){
         if(err){
@@ -15,6 +16,7 @@ module.exports.create= function(req,res){
     })
 }
 
+//log in route function
 module.exports.createJwt=function(req,res){
     Doctor.findOne({username:req.body.username},function(err,docs){
         if(err){
